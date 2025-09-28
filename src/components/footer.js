@@ -18,9 +18,6 @@ function Footer(){
           <LinkedInIcon />
         </IconButton>
       </Box>
-      <Typography variant="body2">
-        © {new Date().getFullYear()} Azhagu Roobika. All Rights Reserved.
-      </Typography>
     </Box>
         </div>
     );
