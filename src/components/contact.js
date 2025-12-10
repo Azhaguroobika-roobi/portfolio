@@ -55,7 +55,7 @@ function Contact(){
                     color: '#4a4a4a',
                     lineHeight: 1.8,
                 }}>
-                    Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+                  Reach out if you’re looking for a passionate frontend developer. I’m always happy to discussing new opportunities, or answering any questions you may have. Feel free to reach out.
                 </Typography>
 
                 {/* Contact Information */}
