@@ -34,10 +34,9 @@ function Skills(){
         <Box sx={{
             position: 'relative',
             backgroundColor: 'white',
-            padding: { xs: '40px 20px', md: '80px 60px' },
+            padding: { xs: '40px 20px', md: '60px 60px' },
             maxWidth: '1400px',
-            margin: '0 auto',
-            minHeight: '100vh'
+            margin: '0 auto'
         }}>
             {/* Heading */}
             <Typography sx={{

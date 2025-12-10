@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import About from "./about";
+import Education from "./education";
 import Projects from "./projects";
 import Skills from "./skills";
 import Contact from "./contact";
@@ -188,6 +189,7 @@ function Home() {
         {/* Other Sections */}
         <Box sx={{ position: 'relative', zIndex: 2 }}>
           <About />
+          <Education />
           <Projects />
           <Skills />
           <Contact />
