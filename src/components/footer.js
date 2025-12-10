@@ -23,7 +23,7 @@ function Footer(){
                 fontSize: { xs: '24px', md: '32px' },
                 fontWeight: 700,
                 color: 'white',
-                marginBottom: '10px'
+                marginBottom: '8px'
             }}>
                 Contact Me
             </Typography>
@@ -32,7 +32,7 @@ function Footer(){
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: '16px',
                 color: '#cccccc',
-                marginBottom: '18px'
+                marginBottom: '16px'
             }}>
                 {contactInfo.email}
             </Typography>
@@ -41,7 +41,7 @@ function Footer(){
                 display: 'flex', 
                 justifyContent: 'center', 
                 gap: '16px',
-                marginTop: '18px'
+                marginTop: '16px'
             }}>
                 <IconButton
                     component="a"

@@ -81,6 +81,8 @@ function Home() {
             {/* Buttons */}
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'nowrap' }}>
               <Button
+                component={Link}
+                to="/contact"
                 variant="contained"
                 sx={{
                   backgroundColor: '#1a1a1a',
