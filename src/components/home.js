@@ -20,19 +20,22 @@ function Home() {
         {/* Hero Section */}
         <Box sx={{
           display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: { xs: '40px 20px', md: '80px 60px' },
           maxWidth: '1400px',
           margin: '0 auto',
           position: 'relative',
-          zIndex: 2
+          zIndex: 2,
+          gap: { xs: '40px', md: '60px' }
         }}>
           {/* Left Side - Text Content */}
           <Box sx={{
             flex: 1,
             maxWidth: { xs: '100%', md: '600px' },
-            marginRight: { xs: 0, md: '60px' }
+            width: '100%',
+            textAlign: { xs: 'center', md: 'left' }
           }}>
             <Typography sx={{
               fontFamily: "Montserrat, sans-serif",
@@ -79,7 +82,12 @@ function Home() {
             </Typography>
 
             {/* Buttons */}
-            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'nowrap' }}>
+            <Box sx={{ 
+              display: 'flex', 
+              gap: 2, 
+              flexWrap: { xs: 'wrap', md: 'nowrap' },
+              justifyContent: { xs: 'center', md: 'flex-start' }
+            }}>
               <Button
                 component={Link}
                 to="/contact"
@@ -153,14 +161,15 @@ function Home() {
           {/* Right Side - Image */}
           <Box sx={{
             flex: 1,
-            display: { xs: 'none', md: 'flex' },
+            display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            maxWidth: '400px'
+            maxWidth: { xs: '100%', md: '400px' },
+            width: '100%'
           }}>
             <Box sx={{
-              width: { xs: '250px', md: '300px' },
-              height: { xs: '250px', md: '300px' },
+              width: { xs: '200px', md: '300px' },
+              height: { xs: '200px', md: '300px' },
               borderRadius: '50%',
               border: '3px solid rgba(155, 89, 182, 0.3)',
               padding: '4px',
