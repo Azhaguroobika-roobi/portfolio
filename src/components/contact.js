@@ -48,7 +48,6 @@ function Contact(){
                     Get in Touch
                     <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
                 </Typography>
-
                 <Typography sx={{
                     fontFamily: "Montserrat, sans-serif",
                     fontSize: '16px',
