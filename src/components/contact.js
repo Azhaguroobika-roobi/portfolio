@@ -15,7 +15,7 @@ function Contact(){
         <Box sx={{
             position: 'relative',
             backgroundColor: 'white',
-            padding: { xs: '40px 20px', md: '60px 60px' },
+            padding: { xs: '30px 20px', md: '40px 60px' },
             maxWidth: '1400px',
             margin: '0 auto'
         }}>

@@ -53,7 +53,7 @@ function Projects(){
         <Box sx={{
             position: 'relative',
             backgroundColor: 'white',
-            padding: { xs: '40px 20px', md: '80px 60px' },
+            padding: { xs: '30px 20px', md: '50px 60px' },
             maxWidth: '1400px',
             margin: '0 auto',
             minHeight: '100vh'
@@ -64,7 +64,7 @@ function Projects(){
                 fontSize: { xs: '48px', md: '72px' },
                 fontWeight: 700,
                 color: '#1a1a1a',
-                marginBottom: { xs: '40px', md: '60px' }
+                marginBottom: { xs: '30px', md: '40px' }
             }}>
                 Projects
                 <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>

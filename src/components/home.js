@@ -24,7 +24,7 @@ function Home() {
           flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: { xs: '40px 20px', md: '80px 60px' },
+          padding: { xs: '30px 20px', md: '50px 60px' },
           maxWidth: '1400px',
           margin: '0 auto',
           position: 'relative',
@@ -44,7 +44,7 @@ function Home() {
               color: '#4a4a4a',
               marginBottom: '20px'
             }}>
-              Hey, I'm Azhagu Roobika 👋
+              Hey, I'm Azhagu Roobika R 👋
             </Typography>
 
             <Box sx={{ marginBottom: '24px' }}>

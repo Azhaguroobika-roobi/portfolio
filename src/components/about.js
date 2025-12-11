@@ -21,12 +21,12 @@ function About(){
         <Box sx={{
             position: 'relative',
             backgroundColor: 'white',
-            padding: { xs: '40px 20px', md: '80px 60px' },
+            padding: { xs: '30px 20px', md: '50px 60px' },
             maxWidth: '1400px',
             margin: '0 auto'
         }}>
             {/* About me Section */}
-            <Box sx={{ marginBottom: { xs: '60px', md: '80px' } }}>
+            <Box sx={{ marginBottom: { xs: '40px', md: '50px' } }}>
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 3 }}>
                     {/* Purple accent bar */}
                     <Box sx={{
