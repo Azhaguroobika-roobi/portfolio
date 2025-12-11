@@ -29,9 +29,9 @@ function Projects(){
             description: 'A fully responsive personal portfolio website to showcase my skills, projects, and contact information. Responsive portfolio using React and MUI.', 
             technologies: 'Build using React and MUI Components.',
             bullets: [
-                'Built a fully responsive personal portfolio website using React and MUI',
-                'Showcased skills, projects, and contact information with modern UI design',
-                'Implemented routing and interactive components for seamless navigation'
+                'Built a fully responsive personal portfolio website using React and MUI.',
+                'Showcased skills, projects, and contact information with modern UI design.',
+                'Implemented routing and interactive components for seamless navigation.'
             ]
         },
         { 
@@ -39,9 +39,9 @@ function Projects(){
             description: 'Developed an effective e-commerce website using HTML and CSS. Gained practical experience in front-end design and usability principles.', 
             technologies: 'Build using HTML and CSS.',
             bullets: [
-                'Developed an effective e-commerce website using HTML and CSS',
-                'Gained practical experience in front-end design and usability principles',
-                'Implemented responsive design for optimal user experience across devices'
+                'Developed an effective e-commerce website using HTML and CSS.',
+                'Gained practical experience in front-end design and usability principles.',
+                'Implemented responsive design for optimal user experience across devices.'
             ]
         },
     ];
