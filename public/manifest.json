@@ -1,0 +1,25 @@
+{
+  "short_name": "Azhagu Roobika",
+  "name": "Azhagu Roobika | Frontend developer",
+  "icons": [
+    {
+      "src": "R Logo.png",
+      "type": "image/png",
+      "sizes": "any"
+    },
+    {
+      "src": "R Logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "R Logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
