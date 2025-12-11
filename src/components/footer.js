@@ -41,7 +41,8 @@ function Footer(){
                 display: 'flex', 
                 justifyContent: 'center', 
                 gap: '16px',
-                marginTop: '16px'
+                marginTop: '16px',
+                marginBottom: '16px'
             }}>
                 <IconButton
                     component="a"
@@ -93,6 +94,7 @@ function Footer(){
                     <EmailIcon />
                 </IconButton>
             </Box>
+            <Typography sx={{color: "#cccccc",fontFamily: "Montserrat, sans-serif",fontSize: '14px', }}> © 2025 Azhagu Roobika. All rights reserved.</Typography>
         </Box>
     );
 }
