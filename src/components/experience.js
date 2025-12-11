@@ -2,38 +2,34 @@ import React, { useState } from "react";
 import { Box, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-function Education(){
-    const educations = [
+function Experience(){
+    const experiences = [
         { 
-            institution: 'Arunachala Arts and Science (Women) College', 
-            location: 'VelliChanthai , KannyaKumari',
-            degree: 'B.Sc Computer Science',
-            percentage: '86.2%',
-            year: '2022 - 2025',
-            details: [
-                'Degree: Degree Name 2',
-                'Location: Location 2',
-                'Percentage: XX%',
-                'Year: YYYY - YYYY'
-            ]
+            position: 'Frontend Developer', 
+            company: 'SM infotech',
+            location: 'Chennai',
+            duration: 'Jun 2025 - Present',
+            work: 'Contributing to UI development using React, HTML, CSS, and JavaScript Working on responsive pages and reusable components Collaborating with team to enhance user experience and performance'
         },
         { 
-            institution: 'Evans Matriculation Higher Secondary School', 
-            location: 'N.G.O.Colony , KannyaKumari',
-            degree: 'HSC',
-            percentage: '64.6%',
-            year: '2021 - 2022',
-            details: [
-                'Degree: Degree Name 1',
-                'Location: Location 1',
-                'Percentage: XX%',
-                'Year: YYYY - YYYY'
-            ]
+            position: 'Web Development Intern', 
+            company: 'Access Healthcare Services Pvt. Ltd.',
+            location: 'Chennai',
+            duration: 'Jan 2025 – Feb 2025',
+            work: 'Built internal tools UI modules, optimized workflows, contributed to front-end improvements.'
         },
+        { 
+            position: 'Frontend Development Intern', 
+            company: 'Alo Info Tech',
+            location: 'Chennai',
+            duration: 'Jun 2024 – Jul 2024',
+            work: 'Developed e-commerce UI, implemented responsive layouts, worked with React & JavaScript.'
+        },
+        
     ];
 
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const selectedEducation = educations[selectedIndex];
+    const selectedExperience = experiences[selectedIndex];
 
     return(
         <Box sx={{
@@ -51,7 +47,7 @@ function Education(){
                 color: '#1a1a1a',
                 marginBottom: { xs: '40px', md: '60px' }
             }}>
-                Education
+                Experience
                 <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
             </Typography>
 
@@ -79,9 +75,9 @@ function Education(){
                         opacity: 0.3
                     }} />
 
-                    {/* Education list */}
+                    {/* Experience list */}
                     <Box sx={{ paddingLeft: '20px' }}>
-                        {educations.map((education, index) => (
+                        {experiences.map((experience, index) => (
                             <Box
                                 key={index}
                                 onClick={() => setSelectedIndex(index)}
@@ -114,7 +110,7 @@ function Education(){
                                         color: '#9b59b6'
                                     }
                                 }}>
-                                    {education.institution}
+                                    {experience.company}
                                 </Typography>
                             </Box>
                         ))}
@@ -133,9 +129,9 @@ function Education(){
                         color: '#1a1a1a',
                         marginBottom: '8px'
                     }}>
-                        Education
+                        Experience
                         <Box component="span" sx={{ color: '#9b59b6' }}>
-                            {' @ ' + selectedEducation.institution}
+                            {' @ ' + selectedExperience.company}
                         </Box>
                     </Typography>
 
@@ -145,7 +141,7 @@ function Education(){
                         color: '#888888',
                         marginBottom: '24px'
                     }}>
-                        {selectedEducation.degree} • {selectedEducation.location} • {selectedEducation.year}
+                        {selectedExperience.position} • {selectedExperience.location} • {selectedExperience.duration}
                     </Typography>
 
                     {/* Details */}
@@ -163,7 +159,7 @@ function Education(){
                                 color: '#4a4a4a',
                                 lineHeight: 1.6
                             }}>
-                                <strong>Institution:</strong> {selectedEducation.institution}
+                                <strong>Position:</strong> {selectedExperience.position}
                             </Typography>
                         </Box>
                         <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
@@ -179,7 +175,7 @@ function Education(){
                                 color: '#4a4a4a',
                                 lineHeight: 1.6
                             }}>
-                                <strong>Location:</strong> {selectedEducation.location}
+                                <strong>Company:</strong> {selectedExperience.company}
                             </Typography>
                         </Box>
                         <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
@@ -195,7 +191,7 @@ function Education(){
                                 color: '#4a4a4a',
                                 lineHeight: 1.6
                             }}>
-                                <strong>Degree:</strong> {selectedEducation.degree}
+                                <strong>Location:</strong> {selectedExperience.location}
                             </Typography>
                         </Box>
                         <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
@@ -211,7 +207,7 @@ function Education(){
                                 color: '#4a4a4a',
                                 lineHeight: 1.6
                             }}>
-                                <strong>Percentage:</strong> {selectedEducation.percentage}
+                                <strong>Duration:</strong> {selectedExperience.duration}
                             </Typography>
                         </Box>
                         <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
@@ -227,7 +223,7 @@ function Education(){
                                 color: '#4a4a4a',
                                 lineHeight: 1.6
                             }}>
-                                <strong>Year:</strong> {selectedEducation.year}
+                                <strong>Work:</strong> {selectedExperience.work}
                             </Typography>
                         </Box>
                     </Box>
@@ -237,5 +233,5 @@ function Education(){
     );
 }
 
-export default Education;
+export default Experience;
 

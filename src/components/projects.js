@@ -5,13 +5,23 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 function Projects(){
     const projects = [
         { 
-            title: 'E-Commerce Website', 
-            description: 'Developed an effective e-commerce website using HTML and CSS. Gained practical experience in front-end design and usability principles.', 
-            technologies: 'Build using HTML and CSS.',
+            title: 'emHealth — Healthcare Backoffice Portal', 
+            description: 'Developed a back-office healthcare portal that streamlines lab appointment management with real-time tracking, analytics, and productivity-enhancing workflows.', 
+            technologies: 'React, HTML, CSS, JavaScript and MUI Components.',
             bullets: [
-                'Developed an effective e-commerce website using HTML and CSS',
-                'Gained practical experience in front-end design and usability principles',
-                'Implemented responsive design for optimal user experience across devices'
+                'Built a back-office healthcare portal to efficiently manage and optimize lab appointment workflows.',
+                'Implemented real-time tracking and analytics to monitor appointments and improve operational decision-making.',
+                'Designed a streamlined, responsive interface that enhances productivity and simplifies daily lab management tasks.'
+            ]
+        },
+        { 
+            title: 'Medapto — Healthcare News Aggregator', 
+            description: 'A React-based platform that aggregates verified medical news with concise summaries for easy, reliable healthcare updates.', 
+            technologies: 'React, HTML, CSS, JavaScript',
+            bullets: [
+                'Built a platform that aggregates verified medical news from trusted councils, government health departments, and recognized medical journals.',
+                'Developed summarized news cards for quick reading and added source links for full verification.',
+                'Designed a clean, responsive UI for medical students and healthcare professionals.'
             ]
         },
         { 
@@ -24,6 +34,16 @@ function Projects(){
                 'Implemented routing and interactive components for seamless navigation'
             ]
         },
+        { 
+            title: 'E-Commerce Website', 
+            description: 'Developed an effective e-commerce website using HTML and CSS. Gained practical experience in front-end design and usability principles.', 
+            technologies: 'Build using HTML and CSS.',
+            bullets: [
+                'Developed an effective e-commerce website using HTML and CSS',
+                'Gained practical experience in front-end design and usability principles',
+                'Implemented responsive design for optimal user experience across devices'
+            ]
+        },
     ];
 
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -33,9 +53,10 @@ function Projects(){
         <Box sx={{
             position: 'relative',
             backgroundColor: 'white',
-            padding: { xs: '40px 20px', md: '60px 60px' },
+            padding: { xs: '40px 20px', md: '80px 60px' },
             maxWidth: '1400px',
-            margin: '0 auto'
+            margin: '0 auto',
+            minHeight: '100vh'
         }}>
             {/* Heading */}
             <Typography sx={{

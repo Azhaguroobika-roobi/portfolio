@@ -89,6 +89,19 @@ function Nav() {
           >
             Skills
           </Button>
+          <Button 
+            component={Link}
+            to="/experience"
+            sx={{ 
+              color: isActive('/experience') ? '#9b59b6' : '#4a4a4a',
+              fontWeight: isActive('/experience') ? 500 : 400,
+              textTransform: 'none',
+              fontSize: '16px',
+              '&:hover': { backgroundColor: 'transparent' }
+            }}
+          >
+            Experience
+          </Button>
         </Box>
       </Box>
     );
