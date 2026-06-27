@@ -3,98 +3,113 @@ import { Box, Typography, IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
-function Footer(){
+function Footer() {
     const contactInfo = {
         email: 'azhaguroobika@gmail.com',
-        linkedin: 'https://www.linkedin.com/in/azhagu-roobika-b85a82300?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtmZDEMFyTgKIcgKWBZqjdg%3D%3D', 
+        linkedin: 'https://www.linkedin.com/in/azhagu-roobika-b85a82300?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtmZDEMFyTgKIcgKWBZqjdg%3D%3D',
         github: 'https://github.com/Azhaguroobika-roobi'
     };
 
-    return(
-        <Box sx={{ 
-            backgroundColor: '#232323ff', 
-            color: 'white', 
-            padding: { xs: '20px 50px', md: '25px 25px' },
-            textAlign: 'center'
-        }}>
-            <Typography sx={{
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: { xs: '24px', md: '32px' },
-                fontWeight: 700,
-                color: 'white',
-                marginBottom: '8px'
-            }}>
-                Contact Me
-            </Typography>
-            
-            <Typography sx={{
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: '16px',
-                color: '#cccccc',
-                marginBottom: '16px'
-            }}>
-                {contactInfo.email}
-            </Typography>
+    const socials = [
+        { icon: <LinkedInIcon />, href: contactInfo.linkedin, label: 'LinkedIn' },
+        { icon: <GitHubIcon />, href: contactInfo.github, label: 'GitHub' },
+        { icon: <EmailIcon />, href: `mailto:${contactInfo.email}`, label: 'Email' },
+    ];
 
-            <Box sx={{ 
-                display: 'flex', 
-                justifyContent: 'center', 
-                gap: '16px',
-                marginTop: '16px',
-                marginBottom: '16px'
+    return (
+        <Box sx={{
+            backgroundColor: 'var(--bg-footer)',
+            borderTop: '1px solid var(--border-subtle)',
+            padding: { xs: '40px 24px', md: '56px 60px' },
+            transition: 'background-color 0.4s ease',
+        }}>
+            <Box sx={{
+                maxWidth: '1300px', margin: '0 auto',
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '32px',
             }}>
-                <IconButton
-                    component="a"
-                    href={contactInfo.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{
-                        backgroundColor: '#333333',
-                        color: 'white',
-                        '&:hover': {
-                            backgroundColor: '#9b59b6',
-                            color: 'white'
-                        },
-                        transition: 'all 0.3s ease'
-                    }}
-                >
-                    <LinkedInIcon />
-                </IconButton>
-                <IconButton
-                    component="a"
-                    href={contactInfo.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{
-                        backgroundColor: '#333333',
-                        color: 'white',
-                        '&:hover': {
-                            backgroundColor: '#9b59b6',
-                            color: 'white'
-                        },
-                        transition: 'all 0.3s ease'
-                    }}
-                >
-                    <GitHubIcon />
-                </IconButton>
-                <IconButton
-                    component="a"
-                    href={`mailto:${contactInfo.email}`}
-                    sx={{
-                        backgroundColor: '#333333',
-                        color: 'white',
-                        '&:hover': {
-                            backgroundColor: '#9b59b6',
-                            color: 'white'
-                        },
-                        transition: 'all 0.3s ease'
-                    }}
-                >
-                    <EmailIcon />
-                </IconButton>
+                {/* Brand */}
+                <Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, marginBottom: '8px' }}>
+                        <Box sx={{
+                            width: 32, height: 32, borderRadius: '8px',
+                            background: 'var(--gradient-primary)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            fontSize: '13px', fontWeight: 800, color: 'var(--text-on-accent)',
+                            fontFamily: "'Inter', sans-serif",
+                        }}>
+                            AR
+                        </Box>
+                        <Typography sx={{
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: '16px', fontWeight: 700, color: '#ffffff',
+                        }}>
+                            Azhagu Roobika R.
+                        </Typography>
+                    </Box>
+                    <Typography sx={{
+                        fontFamily: "'Inter', sans-serif", fontSize: '13px',
+                        color: 'var(--text-muted)', maxWidth: '280px', lineHeight: 1.6,
+                    }}>
+                        Frontend Developer passionate about building beautiful and functional web experiences.
+                    </Typography>
+                </Box>
+
+                {/* Social Icons */}
+                <Box sx={{ display: 'flex', gap: '12px' }}>
+                    {socials.map((social, index) => (
+                        <IconButton
+                            key={index}
+                            component="a"
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={social.label}
+                            sx={{
+                                width: 44, height: 44, borderRadius: '10px',
+                                backgroundColor: 'var(--bg-card)',
+                                border: '1px solid var(--border-card)',
+                                color: 'var(--text-muted)',
+                                '&:hover': {
+                                    backgroundColor: 'var(--accent-primary-10)',
+                                    color: 'var(--accent-primary)',
+                                    borderColor: 'var(--accent-primary-25)',
+                                    transform: 'translateY(-2px)',
+                                },
+                                transition: 'all 0.25s ease',
+                                '& svg': { fontSize: '20px' }
+                            }}
+                        >
+                            {social.icon}
+                        </IconButton>
+                    ))}
+                </Box>
+
+                {/* Copyright */}
+                <Box sx={{ textAlign: { xs: 'center', md: 'right' } }}>
+                    <Typography sx={{
+                        fontFamily: "'Inter', sans-serif", fontSize: '13px',
+                        color: 'var(--text-muted)',
+                        display: 'flex', alignItems: 'center', gap: 0.5,
+                        justifyContent: { xs: 'center', md: 'flex-end' },
+                    }}>
+                        Made with
+                        <FavoriteIcon sx={{ fontSize: '12px', color: 'var(--accent-primary)' }} />
+                        by Azhagu Roobika
+                    </Typography>
+                    <Typography sx={{
+                        fontFamily: "'Inter', sans-serif", fontSize: '12px',
+                        color: 'var(--text-very-muted)', marginTop: '4px',
+                    }}>
+                        © 2025 All rights reserved.
+                    </Typography>
+                </Box>
             </Box>
-            <Typography sx={{color: "#cccccc",fontFamily: "Montserrat, sans-serif",fontSize: '14px', }}> © 2025 Azhagu Roobika. All rights reserved.</Typography>
         </Box>
     );
 }

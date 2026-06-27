@@ -1,97 +1,131 @@
 import React from "react";
 import { Box, Typography } from '@mui/material';
 
-function Skills(){
+const SectionLabel = ({ children }) => (
+    <Box sx={{
+        display: 'inline-flex', alignItems: 'center', gap: 1,
+        backgroundColor: 'var(--accent-primary-08)',
+        border: '1px solid var(--accent-primary-20)',
+        borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+    }}>
+        <Box sx={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gradient-primary)' }} />
+        <Typography sx={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '12px', fontWeight: 600,
+            color: 'var(--accent-primary)', letterSpacing: '1px', textTransform: 'uppercase',
+        }}>
+            {children}
+        </Typography>
+    </Box>
+);
+
+function Skills() {
     const skillCategories = [
         {
-            category: "Web Design",
-            skills: [
-                "UI/UX Design",
-                "Responsive Design",
-            ]
+            category: "Web Design", icon: "🎨",
+            colorVar: 'var(--accent-primary)',
+            bgVar: 'var(--accent-primary-08)',
+            borderVar: 'var(--accent-primary-20)',
+            skills: ["UI/UX Design", "Responsive Design", "Figma Basics"]
         },
         {
-            category: "Frontend",
-            skills: [
-                "Javascript",
-                "ReactJS",
-                "HTML",
-                "CSS"
-            ]
+            category: "Frontend", icon: "⚡",
+            colorVar: 'var(--accent-secondary)',
+            bgVar: 'var(--accent-secondary-08)',
+            borderVar: 'var(--accent-secondary-20)',
+            skills: ["JavaScript", "ReactJS", "HTML5", "CSS3", "MUI"]
         },
         {
-            category: "Soft Skills",
-            skills: [
-                "Effective communication",
-                "Collaboration",
-                "Commitment",
-                "Adaptability"
-            ]
+            category: "Tools", icon: "🛠️",
+            colorVar: 'var(--accent-purple)',
+            bgVar: 'var(--accent-purple-08)',
+            borderVar: 'var(--accent-purple-20)',
+            skills: ["Git / GitHub", "VS Code", "npm / yarn"]
+        },
+        {
+            category: "Soft Skills", icon: "🤝",
+            colorVar: 'var(--accent-amber)',
+            bgVar: 'var(--accent-amber-08)',
+            borderVar: 'var(--accent-amber-20)',
+            skills: ["Communication", "Collaboration", "Commitment", "Adaptability"]
         }
     ];
 
-    return(
-        <Box sx={{
-            position: 'relative',
-            backgroundColor: 'white',
-            padding: { xs: '30px 20px', md: '40px 60px' },
-            maxWidth: '1400px',
-            margin: '0 auto'
-        }}>
-            {/* Heading */}
-            <Typography sx={{
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: { xs: '48px', md: '72px' },
-                fontWeight: 700,
-                color: '#1a1a1a',
-                marginBottom: { xs: '30px', md: '40px' }
-            }}>
-                Skills
-                <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
-            </Typography>
+    return (
+        <Box sx={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-section)' }}>
+            <Box sx={{ padding: { xs: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
+                <SectionLabel>Skills</SectionLabel>
+                <Typography component="h2" sx={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: { xs: '38px', md: '56px' }, fontWeight: 800,
+                    letterSpacing: '-1.5px', lineHeight: 1.1,
+                    color: 'var(--text-primary)',
+                    marginBottom: { xs: '40px', md: '56px' },
+                }}>
+                    My Skills
+                    <Box component="span" sx={{
+                        background: 'var(--gradient-primary)',
+                        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                    }}>.</Box>
+                </Typography>
 
-            {/* Skill Categories Grid */}
-            <Box sx={{
-                display: 'grid',
-                gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr' },
-                gap: { xs: '40px', md: '60px' }
-            }}>
-                {skillCategories.map((category, index) => (
-                    <Box key={index}>
-                        {/* Category Heading */}
-                        <Typography sx={{
-                            fontFamily: "Montserrat, sans-serif",
-                            fontSize: { xs: '20px', md: '24px' },
-                            fontWeight: 700,
-                            color: '#1a1a1a',
-                            marginBottom: '20px'
+                <Box sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', lg: 'repeat(4, 1fr)' },
+                    gap: '20px',
+                }}>
+                    {skillCategories.map((cat, index) => (
+                        <Box key={index} sx={{
+                            backgroundColor: 'var(--bg-card)',
+                            border: '1px solid var(--border-card)',
+                            borderRadius: '16px', padding: '28px',
+                            transition: 'all 0.3s ease',
+                            '&:hover': {
+                                backgroundColor: cat.bgVar,
+                                borderColor: cat.borderVar,
+                                transform: 'translateY(-4px)',
+                                boxShadow: '0 12px 40px rgba(0,0,0,0.2)',
+                            },
                         }}>
-                            {category.category}
-                        </Typography>
-
-                        {/* Skills List */}
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                            {category.skills.map((skill, skillIndex) => (
-                                <Typography 
-                                    key={skillIndex}
-                                    sx={{
-                                        fontFamily: "Montserrat, sans-serif",
-                                        fontSize: '16px',
-                                        fontWeight: 400,
-                                        color: '#888888',
-                                        lineHeight: 1.6
-                                    }}
-                                >
-                                    {skill}
-                                </Typography>
-                            ))}
+                            <Box sx={{
+                                width: 48, height: 48, borderRadius: '12px',
+                                backgroundColor: cat.bgVar,
+                                border: `1px solid ${cat.borderVar}`,
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                fontSize: '22px', marginBottom: '16px',
+                            }}>
+                                {cat.icon}
+                            </Box>
+                            <Typography sx={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: '18px', fontWeight: 700,
+                                color: cat.colorVar,
+                                marginBottom: '16px', letterSpacing: '-0.3px',
+                            }}>
+                                {cat.category}
+                            </Typography>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                {cat.skills.map((skill, i) => (
+                                    <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <Box sx={{
+                                            width: 6, height: 6, borderRadius: '50%',
+                                            backgroundColor: cat.colorVar, flexShrink: 0, opacity: 0.7,
+                                        }} />
+                                        <Typography sx={{
+                                            fontFamily: "'Inter', sans-serif",
+                                            fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5,
+                                        }}>
+                                            {skill}
+                                        </Typography>
+                                    </Box>
+                                ))}
+                            </Box>
                         </Box>
-                    </Box>
-                ))}
+                    ))}
+                </Box>
             </Box>
         </Box>
     );
 }
 
 export default Skills;
-

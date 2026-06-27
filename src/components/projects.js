@@ -1,188 +1,175 @@
 import React, { useState } from "react";
-import { Box, Typography } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Box, Typography, Chip } from '@mui/material';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-function Projects(){
+const SectionLabel = ({ children }) => (
+    <Box sx={{
+        display: 'inline-flex', alignItems: 'center', gap: 1,
+        backgroundColor: 'var(--accent-primary-08)',
+        border: '1px solid var(--accent-primary-20)',
+        borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+    }}>
+        <Box sx={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gradient-primary)' }} />
+        <Typography sx={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '12px', fontWeight: 600,
+            color: 'var(--accent-primary)', letterSpacing: '1px', textTransform: 'uppercase',
+        }}>
+            {children}
+        </Typography>
+    </Box>
+);
+
+function Projects() {
     const projects = [
-        { 
-            title: 'emHealth — Healthcare Backoffice Portal', 
-            description: 'Developed a back-office healthcare portal that streamlines lab appointment management with real-time tracking, analytics, and productivity-enhancing workflows.', 
-            technologies: 'React, HTML, CSS, JavaScript and MUI Components.',
+        {
+            title: 'emHealth', subtitle: 'Healthcare Backoffice Portal',
+            technologies: ['React', 'MUI', 'JavaScript', 'CSS'],
             bullets: [
                 'Built a back-office healthcare portal to efficiently manage and optimize lab appointment workflows.',
                 'Implemented real-time tracking and analytics to monitor appointments and improve operational decision-making.',
-                'Designed a streamlined, responsive interface that enhances productivity and simplifies daily lab management tasks.'
+                'Designed a streamlined, responsive interface that enhances productivity and simplifies daily lab management tasks.',
             ]
         },
-        { 
-            title: 'Medapto — Healthcare News Aggregator', 
-            description: 'A React-based platform that aggregates verified medical news with concise summaries for easy, reliable healthcare updates.', 
-            technologies: 'React, HTML, CSS, JavaScript',
+        {
+            title: 'Medapto', subtitle: 'Healthcare News Aggregator',
+            technologies: ['React', 'HTML', 'CSS', 'JavaScript'],
             bullets: [
-                'Built a platform that aggregates verified medical news from trusted councils, government health departments, and recognized medical journals.',
-                'Developed summarized news cards for quick reading and added source links for full verification.',
-                'Designed a clean, responsive UI for medical students and healthcare professionals.'
+                'Built a platform that aggregates verified medical news from trusted councils and medical journals.',
+                'Developed summarized news cards for quick reading with source links for full verification.',
+                'Designed a clean, responsive UI for medical students and healthcare professionals.',
             ]
         },
-        { 
-            title: 'Portfolio Website', 
-            description: 'A fully responsive personal portfolio website to showcase my skills, projects, and contact information. Responsive portfolio using React and MUI.', 
-            technologies: 'Build using React and MUI Components.',
+        {
+            title: 'Portfolio Website', subtitle: 'Personal Portfolio',
+            technologies: ['React', 'MUI', 'JavaScript'],
             bullets: [
                 'Built a fully responsive personal portfolio website using React and MUI.',
                 'Showcased skills, projects, and contact information with modern UI design.',
-                'Implemented routing and interactive components for seamless navigation.'
+                'Implemented routing and interactive components for seamless navigation.',
             ]
         },
-        { 
-            title: 'E-Commerce Website', 
-            description: 'Developed an effective e-commerce website using HTML and CSS. Gained practical experience in front-end design and usability principles.', 
-            technologies: 'Build using HTML and CSS.',
+        {
+            title: 'E-Commerce Website', subtitle: 'Front-End E-Commerce',
+            technologies: ['HTML', 'CSS'],
             bullets: [
                 'Developed an effective e-commerce website using HTML and CSS.',
                 'Gained practical experience in front-end design and usability principles.',
-                'Implemented responsive design for optimal user experience across devices.'
+                'Implemented responsive design for optimal user experience across devices.',
             ]
         },
     ];
 
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const selectedProject = projects[selectedIndex];
+    const sel = projects[selectedIndex];
 
-    return(
-        <Box sx={{
-            position: 'relative',
-            backgroundColor: 'white',
-            padding: { xs: '30px 20px', md: '50px 60px' },
-            maxWidth: '1400px',
-            margin: '0 auto',
-            minHeight: '100vh'
-        }}>
-            {/* Heading */}
-            <Typography sx={{
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: { xs: '48px', md: '72px' },
-                fontWeight: 700,
-                color: '#1a1a1a',
-                marginBottom: { xs: '30px', md: '40px' }
-            }}>
-                Projects
-                <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
-            </Typography>
-
-            {/* Main Content Layout */}
-            <Box sx={{
-                display: 'flex',
-                flexDirection: { xs: 'column', md: 'row' },
-                gap: { xs: '40px', md: '60px' },
-                alignItems: 'flex-start'
-            }}>
-                {/* Left Side - Navigation/Selection Panel */}
-                <Box sx={{
-                    width: { xs: '100%', md: '250px' },
-                    flexShrink: 0,
-                    position: 'relative'
+    return (
+        <Box sx={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-section)' }}>
+            <Box sx={{ padding: { xs: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
+                <SectionLabel>Projects</SectionLabel>
+                <Typography component="h2" sx={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: { xs: '38px', md: '56px' }, fontWeight: 800,
+                    letterSpacing: '-1.5px', lineHeight: 1.1,
+                    color: 'var(--text-primary)',
+                    marginBottom: { xs: '40px', md: '56px' },
                 }}>
-                    {/* Vertical purple line */}
-                    <Box sx={{
-                        position: 'absolute',
-                        left: 0,
-                        top: 0,
-                        bottom: 0,
-                        width: '2px',
-                        backgroundColor: '#9b59b6',
-                        opacity: 0.3
-                    }} />
+                    Projects
+                    <Box component="span" sx={{
+                        background: 'var(--gradient-primary)',
+                        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                    }}>.</Box>
+                </Typography>
 
-                    {/* Project list */}
-                    <Box sx={{ paddingLeft: '20px' }}>
-                        {projects.map((project, index) => (
-                            <Box
-                                key={index}
-                                onClick={() => setSelectedIndex(index)}
-                                sx={{
-                                    position: 'relative',
-                                    padding: '16px 0',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.3s ease'
-                                }}
-                            >
-                                {/* Purple indicator bar for selected item */}
-                                {selectedIndex === index && (
-                                    <Box sx={{
-                                        position: 'absolute',
-                                        left: '-20px',
-                                        top: '16px',
-                                        bottom: '16px',
-                                        width: '2px',
-                                        backgroundColor: '#9b59b6'
-                                    }} />
-                                )}
-
-                                <Typography sx={{
-                                    fontFamily: "Montserrat, sans-serif",
-                                    fontSize: '18px',
-                                    fontWeight: selectedIndex === index ? 600 : 400,
-                                    color: selectedIndex === index ? '#9b59b6' : '#4a4a4a',
-                                    transition: 'all 0.3s ease',
-                                    '&:hover': {
-                                        color: '#9b59b6'
-                                    }
-                                }}>
-                                    {project.title}
-                                </Typography>
-                            </Box>
-                        ))}
-                    </Box>
-                </Box>
-
-                {/* Right Side - Content Display Panel */}
                 <Box sx={{
-                    flex: 1,
-                    paddingLeft: { xs: 0, md: '40px' }
+                    display: 'flex', flexDirection: { xs: 'column', md: 'row' },
+                    gap: '40px', alignItems: 'flex-start',
                 }}>
-                    <Typography sx={{
-                        fontFamily: "Montserrat, sans-serif",
-                        fontSize: { xs: '24px', md: '32px' },
-                        fontWeight: 700,
-                        color: '#1a1a1a',
-                        marginBottom: '8px'
-                    }}>
-                        Project
-                        <Box component="span" sx={{ color: '#9b59b6' }}>
-                            {' @ ' + selectedProject.title}
+                    {/* Left Panel */}
+                    <Box sx={{ width: { xs: '100%', md: '280px' }, flexShrink: 0 }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            {projects.map((project, index) => (
+                                <Box
+                                    key={index}
+                                    onClick={() => setSelectedIndex(index)}
+                                    sx={{
+                                        padding: '16px 20px', borderRadius: '12px', cursor: 'pointer',
+                                        backgroundColor: selectedIndex === index ? 'var(--accent-primary-10)' : 'var(--bg-card)',
+                                        border: selectedIndex === index ? '1px solid var(--accent-primary-25)' : '1px solid var(--border-card)',
+                                        transition: 'all 0.25s ease',
+                                        '&:hover': { backgroundColor: 'var(--accent-primary-08)', borderColor: 'var(--accent-primary-20)' },
+                                    }}
+                                >
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                                        <Box sx={{
+                                            width: 8, height: 8, borderRadius: '50%',
+                                            background: selectedIndex === index ? 'var(--gradient-primary)' : 'var(--text-muted)',
+                                            flexShrink: 0, transition: 'background 0.25s ease',
+                                        }} />
+                                        <Box>
+                                            <Typography sx={{
+                                                fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: 600,
+                                                color: selectedIndex === index ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                                                transition: 'color 0.25s ease',
+                                            }}>
+                                                {project.title}
+                                            </Typography>
+                                            <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: 'var(--text-muted)' }}>
+                                                {project.subtitle}
+                                            </Typography>
+                                        </Box>
+                                    </Box>
+                                </Box>
+                            ))}
                         </Box>
-                    </Typography>
+                    </Box>
 
-                    <Typography sx={{
-                        fontFamily: "Montserrat, sans-serif",
-                        fontSize: '16px',
-                        color: '#888888',
-                        marginBottom: '24px'
+                    {/* Right Panel */}
+                    <Box sx={{
+                        flex: 1,
+                        backgroundColor: 'var(--bg-card)',
+                        border: '1px solid var(--border-card)',
+                        borderRadius: '20px',
+                        padding: { xs: '28px 24px', md: '36px 40px' },
                     }}>
-                        {selectedProject.technologies}
-                    </Typography>
-
-                    {/* Bullet points */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        {selectedProject.bullets.map((bullet, index) => (
-                            <Box key={index} sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                                <CheckCircleIcon sx={{
-                                    color: '#9b59b6',
-                                    fontSize: '20px',
-                                    marginTop: '2px',
-                                    flexShrink: 0
-                                }} />
-                                <Typography sx={{
-                                    fontFamily: "Montserrat, sans-serif",
-                                    fontSize: '16px',
-                                    color: '#4a4a4a',
-                                    lineHeight: 1.6
-                                }}>
-                                    {bullet}
-                                </Typography>
+                        <Typography sx={{
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: { xs: '22px', md: '26px' }, fontWeight: 700,
+                            color: 'var(--text-primary)', letterSpacing: '-0.5px', marginBottom: '6px',
+                        }}>
+                            {sel.title}
+                            <Box component="span" sx={{
+                                background: 'var(--gradient-primary)',
+                                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                                fontSize: '18px', fontWeight: 600,
+                            }}>
+                                {' — ' + sel.subtitle}
                             </Box>
-                        ))}
+                        </Typography>
+
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, marginBottom: '28px', marginTop: '14px' }}>
+                            {sel.technologies.map((tech, i) => (
+                                <Chip key={i} label={tech} size="small" sx={{
+                                    fontFamily: "'Inter', sans-serif", fontSize: '11px', fontWeight: 500,
+                                    backgroundColor: 'var(--accent-primary-08)',
+                                    color: 'var(--accent-primary)',
+                                    border: '1px solid var(--accent-primary-20)',
+                                    borderRadius: '6px',
+                                    '& .MuiChip-label': { padding: '0 10px' }
+                                }} />
+                            ))}
+                        </Box>
+
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                            {sel.bullets.map((bullet, i) => (
+                                <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                    <CheckCircleOutlineIcon sx={{ color: 'var(--accent-secondary)', fontSize: '18px', marginTop: '2px', flexShrink: 0 }} />
+                                    <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.75 }}>
+                                        {bullet}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Box>
                     </Box>
                 </Box>
             </Box>

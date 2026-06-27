@@ -1,234 +1,155 @@
 import React, { useState } from "react";
 import { Box, Typography } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import SchoolIcon from '@mui/icons-material/School';
 
-function Education(){
+const SectionLabel = ({ children }) => (
+    <Box sx={{
+        display: 'inline-flex', alignItems: 'center', gap: 1,
+        backgroundColor: 'var(--accent-primary-08)',
+        border: '1px solid var(--accent-primary-20)',
+        borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+    }}>
+        <Box sx={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gradient-primary)' }} />
+        <Typography sx={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '12px', fontWeight: 600,
+            color: 'var(--accent-primary)', letterSpacing: '1px', textTransform: 'uppercase',
+        }}>
+            {children}
+        </Typography>
+    </Box>
+);
+
+function Education() {
     const educations = [
-        { 
-            institution: 'Arunachala Arts and Science (Women) College', 
-            location: 'VelliChanthai , KannyaKumari',
+        {
+            institution: 'Arunachala Arts and Science (Women) College',
+            location: 'VelliChanthai, KannyaKumari',
             degree: 'B.Sc Computer Science',
             percentage: '86.2%',
             year: '2022 - 2025',
-            details: [
-                'Degree: Degree Name 2',
-                'Location: Location 2',
-                'Percentage: XX%',
-                'Year: YYYY - YYYY'
-            ]
         },
-        { 
-            institution: 'Evans Matriculation Higher Secondary School', 
-            location: 'N.G.O.Colony , KannyaKumari',
+        {
+            institution: 'Evans Matriculation Higher Secondary School',
+            location: 'N.G.O.Colony, KannyaKumari',
             degree: 'HSC',
             percentage: '64.6%',
             year: '2021 - 2022',
-            details: [
-                'Degree: Degree Name 1',
-                'Location: Location 1',
-                'Percentage: XX%',
-                'Year: YYYY - YYYY'
-            ]
         },
     ];
 
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const selectedEducation = educations[selectedIndex];
+    const sel = educations[selectedIndex];
 
-    return(
-        <Box sx={{
-            position: 'relative',
-            backgroundColor: 'white',
-            padding: { xs: '30px 20px', md: '40px 60px' },
-            maxWidth: '1400px',
-            margin: '0 auto'
-        }}>
-            {/* Heading */}
-            <Typography sx={{
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: { xs: '48px', md: '72px' },
-                fontWeight: 700,
-                color: '#1a1a1a',
-                marginBottom: { xs: '30px', md: '40px' }
-            }}>
-                Education
-                <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
-            </Typography>
+    const details = [
+        { label: 'Institution', value: sel.institution },
+        { label: 'Degree', value: sel.degree },
+        { label: 'Location', value: sel.location },
+        { label: 'Percentage', value: sel.percentage },
+        { label: 'Year', value: sel.year },
+    ];
 
-            {/* Main Content Layout */}
-            <Box sx={{
-                display: 'flex',
-                flexDirection: { xs: 'column', md: 'row' },
-                gap: { xs: '40px', md: '60px' },
-                alignItems: 'flex-start'
-            }}>
-                {/* Left Side - Navigation/Selection Panel */}
-                <Box sx={{
-                    width: { xs: '100%', md: '250px' },
-                    flexShrink: 0,
-                    position: 'relative'
+    return (
+        <Box sx={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-section)' }}>
+            <Box sx={{ padding: { xs: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
+                <SectionLabel>Education</SectionLabel>
+                <Typography component="h2" sx={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: { xs: '38px', md: '56px' }, fontWeight: 800,
+                    letterSpacing: '-1.5px', lineHeight: 1.1,
+                    color: 'var(--text-primary)',
+                    marginBottom: { xs: '40px', md: '56px' },
                 }}>
-                    {/* Vertical purple line */}
-                    <Box sx={{
-                        position: 'absolute',
-                        left: 0,
-                        top: 0,
-                        bottom: 0,
-                        width: '2px',
-                        backgroundColor: '#9b59b6',
-                        opacity: 0.3
-                    }} />
+                    Education
+                    <Box component="span" sx={{
+                        background: 'var(--gradient-primary)',
+                        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                    }}>.</Box>
+                </Typography>
 
-                    {/* Education list */}
-                    <Box sx={{ paddingLeft: '20px' }}>
-                        {educations.map((education, index) => (
-                            <Box
-                                key={index}
-                                onClick={() => setSelectedIndex(index)}
-                                sx={{
-                                    position: 'relative',
-                                    padding: '16px 0',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.3s ease'
-                                }}
-                            >
-                                {/* Purple indicator bar for selected item */}
-                                {selectedIndex === index && (
+                <Box sx={{
+                    display: 'flex', flexDirection: { xs: 'column', md: 'row' },
+                    gap: '40px', alignItems: 'flex-start',
+                }}>
+                    {/* Left Panel */}
+                    <Box sx={{ width: { xs: '100%', md: '260px' }, flexShrink: 0 }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            {educations.map((edu, index) => (
+                                <Box
+                                    key={index}
+                                    onClick={() => setSelectedIndex(index)}
+                                    sx={{
+                                        display: 'flex', alignItems: 'center', gap: 2,
+                                        padding: '16px 20px', borderRadius: '12px', cursor: 'pointer',
+                                        backgroundColor: selectedIndex === index ? 'var(--accent-primary-10)' : 'var(--bg-card)',
+                                        border: selectedIndex === index ? '1px solid var(--accent-primary-25)' : '1px solid var(--border-card)',
+                                        transition: 'all 0.25s ease',
+                                        '&:hover': { backgroundColor: 'var(--accent-primary-08)', borderColor: 'var(--accent-primary-20)' },
+                                    }}
+                                >
                                     <Box sx={{
-                                        position: 'absolute',
-                                        left: '-20px',
-                                        top: '16px',
-                                        bottom: '16px',
-                                        width: '2px',
-                                        backgroundColor: '#9b59b6'
-                                    }} />
-                                )}
-
-                                <Typography sx={{
-                                    fontFamily: "Montserrat, sans-serif",
-                                    fontSize: '18px',
-                                    fontWeight: selectedIndex === index ? 600 : 400,
-                                    color: selectedIndex === index ? '#9b59b6' : '#4a4a4a',
-                                    transition: 'all 0.3s ease',
-                                    '&:hover': {
-                                        color: '#9b59b6'
-                                    }
-                                }}>
-                                    {education.institution}
-                                </Typography>
-                            </Box>
-                        ))}
+                                        width: 36, height: 36, borderRadius: '10px',
+                                        background: selectedIndex === index ? 'var(--gradient-primary)' : 'var(--bg-card-2)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                                    }}>
+                                        <SchoolIcon sx={{ fontSize: '18px', color: selectedIndex === index ? 'var(--text-on-accent)' : 'var(--text-muted)' }} />
+                                    </Box>
+                                    <Box>
+                                        <Typography sx={{
+                                            fontFamily: "'Inter', sans-serif", fontSize: '13px', fontWeight: 600,
+                                            color: selectedIndex === index ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                                            lineHeight: 1.3, transition: 'color 0.25s ease',
+                                        }}>
+                                            {edu.degree}
+                                        </Typography>
+                                        <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: 'var(--text-muted)' }}>
+                                            {edu.year}
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                            ))}
+                        </Box>
                     </Box>
-                </Box>
 
-                {/* Right Side - Content Display Panel */}
-                <Box sx={{
-                    flex: 1,
-                    paddingLeft: { xs: 0, md: '40px' }
-                }}>
-                    <Typography sx={{
-                        fontFamily: "Montserrat, sans-serif",
-                        fontSize: { xs: '24px', md: '32px' },
-                        fontWeight: 700,
-                        color: '#1a1a1a',
-                        marginBottom: '8px'
+                    {/* Right Panel */}
+                    <Box sx={{
+                        flex: 1,
+                        backgroundColor: 'var(--bg-card)',
+                        border: '1px solid var(--border-card)',
+                        borderRadius: '20px',
+                        padding: { xs: '28px 24px', md: '36px 40px' },
                     }}>
-                        Education
-                        <Box component="span" sx={{ color: '#9b59b6' }}>
-                            {' @ ' + selectedEducation.institution}
-                        </Box>
-                    </Typography>
-
-                    <Typography sx={{
-                        fontFamily: "Montserrat, sans-serif",
-                        fontSize: '16px',
-                        color: '#888888',
-                        marginBottom: '24px'
-                    }}>
-                        {selectedEducation.degree} • {selectedEducation.location} • {selectedEducation.year}
-                    </Typography>
-
-                    {/* Details */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                            <CheckCircleIcon sx={{
-                                color: '#9b59b6',
-                                fontSize: '20px',
-                                marginTop: '2px',
-                                flexShrink: 0
-                            }} />
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '16px',
-                                color: '#4a4a4a',
-                                lineHeight: 1.6
+                        <Typography sx={{
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: { xs: '18px', md: '22px' },
+                            fontWeight: 700, color: 'var(--text-primary)',
+                            marginBottom: '6px', letterSpacing: '-0.5px',
+                        }}>
+                            {sel.degree}
+                            <Box component="span" sx={{
+                                background: 'var(--gradient-primary)',
+                                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                             }}>
-                                <strong>Institution:</strong> {selectedEducation.institution}
-                            </Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                            <CheckCircleIcon sx={{
-                                color: '#9b59b6',
-                                fontSize: '20px',
-                                marginTop: '2px',
-                                flexShrink: 0
-                            }} />
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '16px',
-                                color: '#4a4a4a',
-                                lineHeight: 1.6
-                            }}>
-                                <strong>Location:</strong> {selectedEducation.location}
-                            </Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                            <CheckCircleIcon sx={{
-                                color: '#9b59b6',
-                                fontSize: '20px',
-                                marginTop: '2px',
-                                flexShrink: 0
-                            }} />
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '16px',
-                                color: '#4a4a4a',
-                                lineHeight: 1.6
-                            }}>
-                                <strong>Degree:</strong> {selectedEducation.degree}
-                            </Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                            <CheckCircleIcon sx={{
-                                color: '#9b59b6',
-                                fontSize: '20px',
-                                marginTop: '2px',
-                                flexShrink: 0
-                            }} />
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '16px',
-                                color: '#4a4a4a',
-                                lineHeight: 1.6
-                            }}>
-                                <strong>Percentage:</strong> {selectedEducation.percentage}
-                            </Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                            <CheckCircleIcon sx={{
-                                color: '#9b59b6',
-                                fontSize: '20px',
-                                marginTop: '2px',
-                                flexShrink: 0
-                            }} />
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '16px',
-                                color: '#4a4a4a',
-                                lineHeight: 1.6
-                            }}>
-                                <strong>Year:</strong> {selectedEducation.year}
-                            </Typography>
+                                {' @ ' + sel.institution}
+                            </Box>
+                        </Typography>
+                        <Typography sx={{
+                            fontFamily: "'Inter', sans-serif", fontSize: '13px',
+                            color: 'var(--text-muted)', marginBottom: '28px', fontWeight: 500,
+                        }}>
+                            {sel.location} · {sel.year}
+                        </Typography>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                            {details.map((d, i) => (
+                                <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                    <CheckCircleOutlineIcon sx={{ color: 'var(--accent-primary)', fontSize: '18px', marginTop: '2px', flexShrink: 0 }} />
+                                    <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                                        <Box component="span" sx={{ color: 'var(--text-primary)', fontWeight: 600 }}>{d.label}: </Box>
+                                        {d.value}
+                                    </Typography>
+                                </Box>
+                            ))}
                         </Box>
                     </Box>
                 </Box>
@@ -238,4 +159,3 @@ function Education(){
 }
 
 export default Education;
-

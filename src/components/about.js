@@ -1,114 +1,105 @@
 import React from "react";
 import { Box, Typography, Chip } from '@mui/material';
-import StarIcon from '@mui/icons-material/Star';
 
-function About(){
+const SectionLabel = ({ children }) => (
+    <Box sx={{
+        display: 'inline-flex', alignItems: 'center', gap: 1,
+        backgroundColor: 'var(--accent-primary-08)',
+        border: '1px solid var(--accent-primary-20)',
+        borderRadius: '100px', padding: '4px 14px',
+        marginBottom: '16px',
+    }}>
+        <Box sx={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gradient-primary)' }} />
+        <Typography sx={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '12px', fontWeight: 600,
+            color: 'var(--accent-primary)', letterSpacing: '1px', textTransform: 'uppercase',
+        }}>
+            {children}
+        </Typography>
+    </Box>
+);
+
+function About() {
     const skills = [
-        "HTML/CSS Mastery",
-        "JavaScript Proficiency",
-        "React Development",
-        "MUI Component Styling",
-        "Responsive Design Skills",
-        "Modern UI/UX Understanding",
-        "Adaptability",
-        "Team Player",
-        "Problem Solving",
-        "Version Control (Git/GitHub)",
-        
+        "HTML/CSS Mastery", "JavaScript Proficiency", "TypeScript",
+        "React Development", "Tailwind CSS", "MUI Component Styling",
+        "Responsive Design", "REST API Integration", "Modern UI/UX",
+        "Adaptability", "Team Player", "Problem Solving", "Version Control (Git)",
     ];
 
-    return(
-        <Box sx={{
-            position: 'relative',
-            backgroundColor: 'white',
-            padding: { xs: '30px 20px', md: '50px 60px' },
-            maxWidth: '1400px',
-            margin: '0 auto'
-        }}>
-            {/* About me Section */}
-            <Box sx={{ marginBottom: { xs: '40px', md: '50px' } }}>
-                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 3 }}>
-                    {/* Purple accent bar */}
-                    <Box sx={{
-                        width: '6px',
-                        backgroundColor: '#9b59b6',
-                        borderRadius: '3px',
-                        minHeight: '100px',
-                        flexShrink: 0
-                    }} />
-                    
-                    <Box sx={{ flex: 1 }}>
-                        <Typography sx={{
-                            fontFamily: "Montserrat, sans-serif",
-                            fontSize: { xs: '48px', md: '72px' },
-                            fontWeight: 700,
-                            color: '#1a1a1a',
-                            lineHeight: 1.1,
-                            marginBottom: '24px'
-                        }}>
-                            About me
-                            <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
-                        </Typography>
-                        
-                        <Typography sx={{
-                            fontFamily: "Montserrat, sans-serif",
-                            fontSize: { xs: '16px', md: '18px' },
-                            color: '#4a4a4a',
-                            lineHeight: 1.8,
-                            maxWidth: '700px'
-                        }}>
-                            Developing beautiful and functional websites is what I love doing, and that's why I give my all in every new challenge. I'm passionate about building responsive web applications using React and MUI. Detail-oriented and highly motivated Computer Science graduate seeking an entry-level front-end development role.
-                        </Typography>
+    return (
+        <Box sx={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-section)' }}>
+            <Box sx={{ padding: { xs: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
+                {/* About Section */}
+                <Box sx={{ marginBottom: { xs: '60px', md: '80px' } }}>
+                    <SectionLabel>About Me</SectionLabel>
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 3 }}>
+                        <Box sx={{
+                            width: '4px', minHeight: '120px',
+                            background: 'var(--gradient-primary)',
+                            borderRadius: '4px', flexShrink: 0, mt: '8px',
+                        }} />
+                        <Box>
+                            <Typography component="h2" sx={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: { xs: '38px', md: '56px' },
+                                fontWeight: 800, letterSpacing: '-1.5px', lineHeight: 1.1,
+                                marginBottom: '24px', color: 'var(--text-primary)',
+                            }}>
+                                About me
+                                <Box component="span" sx={{
+                                    background: 'var(--gradient-primary)',
+                                    WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                                }}>.</Box>
+                            </Typography>
+                            <Typography sx={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: { xs: '15px', md: '17px' },
+                                color: 'var(--text-secondary)', lineHeight: 1.85, maxWidth: '680px',
+                            }}>
+                                Developing beautiful and functional websites is what I love doing, and that's why I give my all in every new challenge. I'm a Software Engineer specializing in React, TypeScript, and modern frontend technologies — building scalable, responsive web applications with clean UI/UX. Computer Science graduate with a passion for performance and polished interfaces.
+                            </Typography>
+                        </Box>
                     </Box>
                 </Box>
-            </Box>
 
-            {/* My Stack Section */}
-            <Box>
-                <Typography sx={{
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: { xs: '32px', md: '48px' },
-                    fontWeight: 600,
-                    color: '#1a1a1a',
-                    marginBottom: '24px'
-                }}>
-                    My Stack
-                    <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
-                </Typography>
-                
-                <Box sx={{
-                    backgroundColor: '#f5f5f5',
-                    borderRadius: '12px',
-                    padding: '24px',
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '12px',
-                    minHeight: '200px'
-                }}>
-                    {skills.map((skill, index) => (
-                        <Chip
-                            key={index}
-                            icon={<StarIcon sx={{ color: 'white !important', fontSize: '18px' }} />}
-                            label={skill}
-                            sx={{
-                                backgroundColor: '#666666',
-                                color: 'white',
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '14px',
-                                fontWeight: 500,
-                                padding: '8px 4px',
-                                height: 'auto',
-                                '& .MuiChip-icon': {
-                                    marginLeft: '8px',
-                                    marginRight: '-4px'
-                                },
-                                '& .MuiChip-label': {
-                                    paddingLeft: '8px',
-                                    paddingRight: '12px'
-                                }
-                            }}
-                        />
-                    ))}
+                {/* My Stack Section */}
+                <Box>
+                    <SectionLabel>Tech Stack</SectionLabel>
+                    <Typography sx={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: { xs: '28px', md: '40px' }, fontWeight: 700, letterSpacing: '-1px',
+                        color: 'var(--text-primary)', marginBottom: '32px',
+                    }}>
+                        My Stack
+                        <Box component="span" sx={{
+                            background: 'var(--gradient-primary)',
+                            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                        }}>.</Box>
+                    </Typography>
+                    <Box sx={{
+                        backgroundColor: 'var(--bg-card)',
+                        border: '1px solid var(--border-card)',
+                        borderRadius: '16px', padding: '28px',
+                        display: 'flex', flexWrap: 'wrap', gap: '10px',
+                    }}>
+                        {skills.map((skill, index) => (
+                            <Chip key={index} label={skill} sx={{
+                                fontFamily: "'Inter', sans-serif", fontSize: '13px', fontWeight: 500,
+                                backgroundColor: index % 3 === 0 ? 'var(--accent-primary-10)'
+                                    : index % 3 === 1 ? 'var(--accent-secondary-10)' : 'var(--bg-card-2)',
+                                color: index % 3 === 0 ? 'var(--accent-primary)'
+                                    : index % 3 === 1 ? 'var(--accent-secondary)' : 'var(--text-secondary)',
+                                border: index % 3 === 0 ? '1px solid var(--accent-primary-25)'
+                                    : index % 3 === 1 ? '1px solid var(--accent-secondary-25)' : '1px solid var(--border-subtle)',
+                                borderRadius: '8px', height: '36px',
+                                transition: 'all 0.2s ease',
+                                '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' },
+                                '& .MuiChip-label': { padding: '0 14px' }
+                            }} />
+                        ))}
+                    </Box>
                 </Box>
             </Box>
         </Box>

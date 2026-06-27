@@ -4,148 +4,159 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-function Contact(){
+const SectionLabel = ({ children }) => (
+    <Box sx={{
+        display: 'inline-flex', alignItems: 'center', gap: 1,
+        backgroundColor: 'var(--accent-primary-08)',
+        border: '1px solid var(--accent-primary-20)',
+        borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+    }}>
+        <Box sx={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gradient-primary)' }} />
+        <Typography sx={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '12px', fontWeight: 600,
+            color: 'var(--accent-primary)', letterSpacing: '1px', textTransform: 'uppercase',
+        }}>
+            {children}
+        </Typography>
+    </Box>
+);
+
+function Contact() {
     const contactInfo = {
         phone: '+91 6369987881',
         email: 'azhaguroobika@gmail.com',
-        location: 'Kannyakumari, Tamil Nadu, India'
+        location: 'Kanyakumari, Tamil Nadu, India'
     };
 
-    return(
-        <Box sx={{
-            position: 'relative',
-            backgroundColor: 'white',
-            padding: { xs: '30px 20px', md: '40px 60px' },
-            maxWidth: '1400px',
-            margin: '0 auto'
-        }}>
-            {/* Heading */}
-            <Typography sx={{
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: { xs: '48px', md: '72px' },
-                fontWeight: 700,
-                color: '#1a1a1a',
-                marginBottom: { xs: '20px', md: '30px' }
-            }}>
-                Contact
-                <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
-            </Typography>
+    const contactItems = [
+        {
+            icon: <PhoneIcon />,
+            label: 'Phone', value: contactInfo.phone, href: `tel:${contactInfo.phone}`,
+            colorVar: 'var(--accent-primary)',
+            bgVar: 'var(--accent-primary-10)',
+            borderVar: 'var(--accent-primary-20)',
+        },
+        {
+            icon: <EmailIcon />,
+            label: 'Email', value: contactInfo.email, href: `mailto:${contactInfo.email}`,
+            colorVar: 'var(--accent-secondary)',
+            bgVar: 'var(--accent-secondary-10)',
+            borderVar: 'var(--accent-secondary-20)',
+        },
+        {
+            icon: <LocationOnIcon />,
+            label: 'Location', value: contactInfo.location, href: null,
+            colorVar: 'var(--accent-purple)',
+            bgVar: 'var(--accent-purple-10)',
+            borderVar: 'var(--accent-purple-20)',
+        },
+    ];
 
-            {/* Main Content Layout */}
-            <Box sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '40px',
-                maxWidth: '800px',
-                margin: '0 auto'
-            }}>
-                <Typography sx={{
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: { xs: '24px', md: '32px' },
-                    fontWeight: 700,
-                    color: '#1a1a1a',
+    return (
+        <Box sx={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-section)' }}>
+            <Box sx={{ padding: { xs: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
+                <SectionLabel>Contact</SectionLabel>
+                <Typography component="h2" sx={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: { xs: '38px', md: '56px' }, fontWeight: 800,
+                    letterSpacing: '-1.5px', lineHeight: 1.1,
+                    color: 'var(--text-primary)',
+                    marginBottom: { xs: '40px', md: '56px' },
                 }}>
-                    Get in Touch
-                    <Box component="span" sx={{ color: '#9b59b6' }}>.</Box>
-                </Typography>
-                <Typography sx={{
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: '16px',
-                    color: '#4a4a4a',
-                    lineHeight: 1.8,
-                }}>
-                  Reach out if you’re looking for a passionate frontend developer. I’m always happy to discussing new opportunities, or answering any questions you may have. Feel free to reach out.
+                    Get In Touch
+                    <Box component="span" sx={{
+                        background: 'var(--gradient-primary)',
+                        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                    }}>.</Box>
                 </Typography>
 
-                {/* Contact Information */}
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                        <PhoneIcon sx={{
-                            color: '#9b59b6',
-                            fontSize: '24px',
-                            marginTop: '2px',
-                            flexShrink: 0
-                        }} />
-                        <Box>
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '14px',
-                                color: '#888888',
-                                marginBottom: '4px'
-                            }}>
-                                Phone
-                            </Typography>
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '16px',
-                                color: '#4a4a4a',
-                                fontWeight: 500
-                            }}>
-                                {contactInfo.phone}
+                <Box sx={{
+                    display: 'flex', flexDirection: { xs: 'column', md: 'row' },
+                    gap: '40px', alignItems: 'flex-start',
+                }}>
+                    {/* Left - Intro */}
+                    <Box sx={{ flex: 1, maxWidth: { xs: '100%', md: '420px' } }}>
+                        <Typography sx={{
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: { xs: '26px', md: '32px' }, fontWeight: 700,
+                            color: 'var(--text-primary)', letterSpacing: '-0.5px', marginBottom: '16px',
+                        }}>
+                            Let's work together
+                            <Box component="span" sx={{
+                                background: 'var(--gradient-primary)',
+                                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                            }}>.</Box>
+                        </Typography>
+                        <Typography sx={{
+                            fontFamily: "'Inter', sans-serif", fontSize: '15px',
+                            color: 'var(--text-secondary)', lineHeight: 1.85,
+                        }}>
+                            Reach out if you're looking for a passionate frontend developer. I'm always happy to discuss new opportunities or answer any questions. Feel free to reach out anytime!
+                        </Typography>
+
+                        {/* Opportunity card */}
+                        <Box sx={{
+                            mt: 4, padding: '24px', borderRadius: '16px',
+                            background: 'linear-gradient(135deg, var(--accent-primary-08), var(--accent-secondary-08))',
+                            border: '1px solid var(--accent-primary-15)',
+                        }}>
+                            <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                                💼 Open to <Box component="span" sx={{ color: 'var(--accent-primary)', fontWeight: 600 }}>Frontend Developer</Box> roles<br />
+                                📍 Based in <Box component="span" sx={{ color: 'var(--accent-secondary)', fontWeight: 600 }}>Tamil Nadu, India</Box><br />
+                                ✅ Available for <Box component="span" sx={{ color: 'var(--accent-purple)', fontWeight: 600 }}>remote & on-site</Box> opportunities
                             </Typography>
                         </Box>
                     </Box>
 
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                        <EmailIcon sx={{
-                            color: '#9b59b6',
-                            fontSize: '24px',
-                            marginTop: '2px',
-                            flexShrink: 0
-                        }} />
-                        <Box>
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '14px',
-                                color: '#888888',
-                                marginBottom: '4px'
-                            }}>
-                                Email
-                            </Typography>
-                            <Typography 
-                                component="a"
-                                href={`mailto:${contactInfo.email}`}
+                    {/* Right - Contact cards */}
+                    <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        {contactItems.map((item, index) => (
+                            <Box
+                                key={index}
+                                component={item.href ? 'a' : 'div'}
+                                href={item.href}
                                 sx={{
-                                    fontFamily: "Montserrat, sans-serif",
-                                    fontSize: '16px',
-                                    color: '#4a4a4a',
-                                    fontWeight: 500,
+                                    display: 'flex', alignItems: 'center', gap: '20px',
+                                    padding: '20px 24px', borderRadius: '14px',
+                                    backgroundColor: 'var(--bg-card)',
+                                    border: '1px solid var(--border-card)',
                                     textDecoration: 'none',
+                                    transition: 'all 0.25s ease',
                                     '&:hover': {
-                                        color: '#9b59b6'
-                                    }
+                                        backgroundColor: item.bgVar,
+                                        borderColor: item.borderVar,
+                                        transform: 'translateX(4px)',
+                                    },
                                 }}
                             >
-                                {contactInfo.email}
-                            </Typography>
-                        </Box>
-                    </Box>
-
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                        <LocationOnIcon sx={{
-                            color: '#9b59b6',
-                            fontSize: '24px',
-                            marginTop: '2px',
-                            flexShrink: 0
-                        }} />
-                        <Box>
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '14px',
-                                color: '#888888',
-                                marginBottom: '4px'
-                            }}>
-                                Location
-                            </Typography>
-                            <Typography sx={{
-                                fontFamily: "Montserrat, sans-serif",
-                                fontSize: '16px',
-                                color: '#4a4a4a',
-                                fontWeight: 500
-                            }}>
-                                {contactInfo.location}
-                            </Typography>
-                        </Box>
+                                <Box sx={{
+                                    width: 48, height: 48, borderRadius: '12px',
+                                    backgroundColor: item.bgVar,
+                                    border: `1px solid ${item.borderVar}`,
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    color: item.colorVar, flexShrink: 0,
+                                    '& svg': { fontSize: '22px' }
+                                }}>
+                                    {item.icon}
+                                </Box>
+                                <Box>
+                                    <Typography sx={{
+                                        fontFamily: "'Inter', sans-serif", fontSize: '12px',
+                                        color: 'var(--text-muted)', fontWeight: 600,
+                                        letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: '3px',
+                                    }}>
+                                        {item.label}
+                                    </Typography>
+                                    <Typography sx={{
+                                        fontFamily: "'Inter', sans-serif", fontSize: '15px',
+                                        color: 'var(--text-primary)', fontWeight: 500,
+                                    }}>
+                                        {item.value}
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        ))}
                     </Box>
                 </Box>
             </Box>
