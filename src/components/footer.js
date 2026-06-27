@@ -71,15 +71,16 @@ function Footer() {
                             rel="noopener noreferrer"
                             aria-label={social.label}
                             sx={{
-                                width: 44, height: 44, borderRadius: '10px',
+                                width: 44, height: 44, borderRadius: '50%',
                                 backgroundColor: 'var(--bg-card)',
                                 border: '1px solid var(--border-card)',
                                 color: 'var(--text-muted)',
                                 '&:hover': {
-                                    backgroundColor: 'var(--accent-primary-10)',
-                                    color: 'var(--accent-primary)',
-                                    borderColor: 'var(--accent-primary-25)',
-                                    transform: 'translateY(-2px)',
+                                    background: 'var(--gradient-primary)',
+                                    color: 'var(--text-on-accent)',
+                                    borderColor: 'transparent',
+                                    transform: 'translateY(-3px)',
+                                    boxShadow: '0 6px 16px var(--accent-primary-35)',
                                 },
                                 transition: 'all 0.25s ease',
                                 '& svg': { fontSize: '20px' }

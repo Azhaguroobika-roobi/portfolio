@@ -11,7 +11,7 @@ import Projects from "./projects";
 import Skills from "./skills";
 import Contact from "./contact";
 import Footer from "./footer";
-import profileImage from "../assests/pic1.png";
+import profileImage from "../assests/pic.png";
 // import profileImage from "../assests/image.jpg";
 //import profileImage from "../assests/profile.jpg";
 
