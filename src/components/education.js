@@ -24,6 +24,13 @@ const SectionLabel = ({ children }) => (
 function Education() {
     const educations = [
         {
+            institution: 'University of Madras (Distance Education)',
+            location: 'Chennai, Tamil Nadu',
+            degree: 'Master of Computer Applications',
+            percentage: 'Pursuing',
+            year: '2025 - Pursuing',
+        },
+        {
             institution: 'Arunachala Arts and Science (Women) College',
             location: 'VelliChanthai, KannyaKumari',
             degree: 'B.Sc Computer Science',

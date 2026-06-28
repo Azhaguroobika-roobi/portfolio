@@ -129,7 +129,7 @@ function Home() {
 
                     {/* Tech pills */}
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, marginBottom: '36px' }}>
-                        {['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'MUI', 'Git'].map((tech) => (
+                        {['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Material UI', 'Git'].map((tech) => (
                             <Chip key={tech} label={tech} size="small" sx={{
                                 fontFamily: "'Inter', sans-serif",
                                 fontSize: '12px', fontWeight: 500,

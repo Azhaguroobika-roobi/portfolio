@@ -22,10 +22,11 @@ const SectionLabel = ({ children }) => (
 
 function About() {
     const skills = [
-        "HTML/CSS Mastery", "JavaScript Proficiency", "TypeScript",
-        "React Development", "Tailwind CSS", "MUI Component Styling",
-        "Responsive Design", "REST API Integration", "Modern UI/UX",
-        "Adaptability", "Team Player", "Problem Solving", "Version Control (Git)",
+        "HTML5", "CSS3", "JavaScript", "TypeScript",
+        "React.js", "Tailwind CSS", "Material UI", "REST APIs",
+        "Git", "GitHub", "Responsive Design", "UI Development",
+        "Performance Optimization", "Component-Based Architecture", "Cross-Browser Compatibility",
+        "Problem Solving", "Teamwork", "Adaptability", "Communication"
     ];
 
     return (
@@ -81,22 +82,20 @@ function About() {
                     <Box sx={{
                         backgroundColor: 'var(--bg-card)',
                         border: '1px solid var(--border-card)',
-                        borderRadius: '16px', padding: '28px',
-                        display: 'flex', flexWrap: 'wrap', gap: '10px',
+                        borderRadius: '16px', padding: { xs: '20px', md: '28px' },
+                        display: 'flex', flexWrap: 'wrap', gap: '8px',
+                        justifyContent: 'center',
                     }}>
                         {skills.map((skill, index) => (
                             <Chip key={index} label={skill} sx={{
-                                fontFamily: "'Inter', sans-serif", fontSize: '13px', fontWeight: 500,
-                                backgroundColor: index % 3 === 0 ? 'var(--accent-primary-10)'
-                                    : index % 3 === 1 ? 'var(--accent-secondary-10)' : 'var(--bg-card-2)',
-                                color: index % 3 === 0 ? 'var(--accent-primary)'
-                                    : index % 3 === 1 ? 'var(--accent-secondary)' : 'var(--text-secondary)',
-                                border: index % 3 === 0 ? '1px solid var(--accent-primary-25)'
-                                    : index % 3 === 1 ? '1px solid var(--accent-secondary-25)' : '1px solid var(--border-subtle)',
-                                borderRadius: '8px', height: '36px',
+                                fontFamily: "'Inter', sans-serif", fontSize: '12px', fontWeight: 500,
+                                backgroundColor: 'var(--accent-primary-10)',
+                                color: 'var(--accent-primary)',
+                                border: '1px solid var(--accent-primary-25)',
+                                borderRadius: '6px', height: '32px',
                                 transition: 'all 0.2s ease',
                                 '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' },
-                                '& .MuiChip-label': { padding: '0 14px' }
+                                '& .MuiChip-label': { padding: '0 12px' }
                             }} />
                         ))}
                     </Box>

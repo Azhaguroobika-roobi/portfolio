@@ -23,8 +23,18 @@ const SectionLabel = ({ children }) => (
 function Projects() {
     const projects = [
         {
+            title: 'Rangero', subtitle: 'SDS Management Platform',
+            technologies: ['React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'REST API'],
+            bullets: [
+                'Workeded on both the Admin Dashboard and Customer Website for the Rangero SDS management platform.',
+                'Built responsive, reusable UI components and integrated REST APIs to deliver a seamless user experience.',
+                'Implemented admin modules for managing Safety Data Sheets (SDS), users, content, and platform operations.',
+                'Optimized application performance, responsiveness, and accessibility across desktop and mobile devices.',
+            ]
+        },
+        {
             title: 'emHealth', subtitle: 'Healthcare Backoffice Portal',
-            technologies: ['React', 'MUI', 'JavaScript', 'CSS'],
+            technologies: ['React', 'Material UI', 'JavaScript', 'CSS'],
             bullets: [
                 'Built a back-office healthcare portal to efficiently manage and optimize lab appointment workflows.',
                 'Implemented real-time tracking and analytics to monitor appointments and improve operational decision-making.',
@@ -42,7 +52,7 @@ function Projects() {
         },
         {
             title: 'Portfolio Website', subtitle: 'Personal Portfolio',
-            technologies: ['React', 'MUI', 'JavaScript'],
+            technologies: ['React', 'Material UI', 'JavaScript'],
             bullets: [
                 'Built a fully responsive personal portfolio website using React and MUI.',
                 'Showcased skills, projects, and contact information with modern UI design.',
