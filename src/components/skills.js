@@ -33,7 +33,7 @@ function Skills() {
             colorVar: 'var(--accent-secondary)',
             bgVar: 'var(--accent-secondary-08)',
             borderVar: 'var(--accent-secondary-20)',
-            skills: ["JavaScript", "ReactJS", "HTML5", "CSS3", "MUI"]
+            skills: ["JavaScript", "React.js", "HTML5", "CSS3", "MUI"]
         },
         {
             category: "Tools", icon: "🛠️",

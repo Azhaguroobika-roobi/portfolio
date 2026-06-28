@@ -301,7 +301,7 @@ function Home() {
                                 Projects
                             </Typography>
                             <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '16px', color: 'var(--text-primary)', fontWeight: 700 }}>
-                                4+ Done
+                                5+ Completed
                             </Typography>
                         </Box>
                     </Box>

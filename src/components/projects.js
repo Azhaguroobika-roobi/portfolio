@@ -26,7 +26,7 @@ function Projects() {
             title: 'Rangero', subtitle: 'SDS Management Platform',
             technologies: ['React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'REST API'],
             bullets: [
-                'Workeded on both the Admin Dashboard and Customer Website for the Rangero SDS management platform.',
+                'Worked on both the Admin Dashboard and Customer Website for the Rangero SDS management platform.',
                 'Built responsive, reusable UI components and integrated REST APIs to deliver a seamless user experience.',
                 'Implemented admin modules for managing Safety Data Sheets (SDS), users, content, and platform operations.',
                 'Optimized application performance, responsiveness, and accessibility across desktop and mobile devices.',

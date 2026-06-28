@@ -44,9 +44,9 @@ function Experience() {
             duration: 'Jun 2025 – Jan 2026',
             type: 'Full-time',
             bullets: [
-                'Contributing to UI development using React, HTML, CSS, and JavaScript',
-                'Working on responsive pages and reusable components',
-                'Collaborating with team to enhance user experience and performance',
+                'Contributed to UI development using React, HTML, CSS, and JavaScript.',
+                'Developed responsive pages and reusable components.',
+                'Collaborated with the team to enhance user experience and performance.',
             ]
         },
         {
@@ -56,9 +56,9 @@ function Experience() {
             duration: 'Jan 2025 – Feb 2025',
             type: 'Internship',
             bullets: [
-                'Built internal tools UI modules using React and modern JS',
-                'Optimized front-end workflows for better performance',
-                'Contributed to front-end improvements and code reviews',
+                'Built UI modules for internal tools using React and modern JavaScript.',
+                'Optimized front-end workflows for improved performance.',
+                'Contributed to front-end enhancements and code reviews.',
             ]
         },
         {
@@ -68,9 +68,9 @@ function Experience() {
             duration: 'Jun 2024 – Jul 2024',
             type: 'Internship',
             bullets: [
-                'Developed e-commerce UI with responsive layouts',
-                'Implemented product listing and cart components',
-                'Worked with React & JavaScript for dynamic features',
+                'Developed an e-commerce UI with responsive layouts.',
+                'Implemented product listing and cart components.',
+                'Utilized React and JavaScript to build dynamic features.',
             ]
         },
     ];

@@ -23,7 +23,7 @@ const SectionLabel = ({ children }) => (
 function About() {
     const skills = [
         "HTML5", "CSS3", "JavaScript", "TypeScript",
-        "React.js", "Tailwind CSS", "Material UI", "REST APIs",
+        "React.js", "Tailwind CSS", "Material UI", "REST API Integration",
         "Git", "GitHub", "Responsive Design", "UI Development",
         "Performance Optimization", "Component-Based Architecture", "Cross-Browser Compatibility",
         "Problem Solving", "Teamwork", "Adaptability", "Communication"
@@ -59,7 +59,7 @@ function About() {
                                 fontSize: { xs: '15px', md: '17px' },
                                 color: 'var(--text-secondary)', lineHeight: 1.85, maxWidth: '680px',
                             }}>
-                                Developing beautiful and functional websites is what I love doing, and that's why I give my all in every new challenge. I'm a Software Engineer specializing in React, TypeScript, and modern frontend technologies — building scalable, responsive web applications with clean UI/UX. Computer Science graduate with a passion for performance and polished interfaces.
+                                Developing beautiful and functional websites is my passion, which is why I dedicate myself entirely to every new challenge. As a Software Engineer specializing in React, TypeScript, and modern front-end technologies, I build scalable, responsive web applications with clean UI/UX. I am a Computer Science graduate driven by a passion for performance and polished interfaces.
                             </Typography>
                         </Box>
                     </Box>

@@ -92,7 +92,7 @@ function Contact() {
                             fontFamily: "'Inter', sans-serif", fontSize: '15px',
                             color: 'var(--text-secondary)', lineHeight: 1.85,
                         }}>
-                            Reach out if you're looking for a passionate frontend developer. I'm always happy to discuss new opportunities or answer any questions. Feel free to reach out anytime!
+                            If you are looking for a passionate and dedicated Software Engineer, I would love to connect. I am always open to discussing new opportunities or answering any questions you may have.
                         </Typography>
 
                         {/* Opportunity card */}
@@ -100,12 +100,26 @@ function Contact() {
                             mt: 4, padding: '24px', borderRadius: '16px',
                             background: 'linear-gradient(135deg, var(--accent-primary-08), var(--accent-secondary-08))',
                             border: '1px solid var(--accent-primary-15)',
+                            display: 'flex', flexDirection: 'column', gap: '12px'
                         }}>
-                            <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                                💼 Open to <Box component="span" sx={{ color: 'var(--accent-primary)', fontWeight: 600 }}>Frontend Developer</Box> roles<br />
-                                📍 Based in <Box component="span" sx={{ color: 'var(--accent-secondary)', fontWeight: 600 }}>Tamil Nadu, India</Box><br />
-                                ✅ Available for <Box component="span" sx={{ color: 'var(--accent-purple)', fontWeight: 600 }}>remote & on-site</Box> opportunities
-                            </Typography>
+                            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                <Box component="span" sx={{ mt: '2px' }}>💼</Box>
+                                <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                                    Open to <Box component="span" sx={{ color: 'var(--accent-primary)', fontWeight: 600 }}>Software Engineer & Frontend Developer</Box> opportunities
+                                </Typography>
+                            </Box>
+                            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                <Box component="span" sx={{ mt: '2px' }}>📍</Box>
+                                <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                                    Based in <Box component="span" sx={{ color: 'var(--accent-secondary)', fontWeight: 600 }}>Tamil Nadu, India</Box>
+                                </Typography>
+                            </Box>
+                            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                <Box component="span" sx={{ mt: '2px' }}>✅</Box>
+                                <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                                    Available for <Box component="span" sx={{ color: 'var(--accent-purple)', fontWeight: 600 }}>remote & on-site</Box> opportunities
+                                </Typography>
+                            </Box>
                         </Box>
                     </Box>
 
