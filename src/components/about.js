@@ -31,7 +31,7 @@ function About() {
 
     return (
         <Box sx={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-section)' }}>
-            <Box sx={{ padding: { xs: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
+            <Box sx={{ padding: { xs: '40px 16px', sm: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
                 {/* About Section */}
                 <Box sx={{ marginBottom: { xs: '60px', md: '80px' } }}>
                     <SectionLabel>About Me</SectionLabel>
@@ -44,7 +44,7 @@ function About() {
                         <Box>
                             <Typography component="h2" sx={{
                                 fontFamily: "'Inter', sans-serif",
-                                fontSize: { xs: '38px', md: '56px' },
+                                fontSize: { xs: '32px', sm: '38px', md: '56px' },
                                 fontWeight: 800, letterSpacing: '-1.5px', lineHeight: 1.1,
                                 marginBottom: '24px', color: 'var(--text-primary)',
                             }}>

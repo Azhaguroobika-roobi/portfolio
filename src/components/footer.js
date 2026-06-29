@@ -56,7 +56,7 @@ function Footer() {
                         fontFamily: "'Inter', sans-serif", fontSize: '13px',
                         color: 'var(--text-muted)', maxWidth: '280px', lineHeight: 1.6,
                     }}>
-                        Frontend Developer passionate about building beautiful and functional web experiences.
+                        Software Engineer passionate about building beautiful and functional web experiences.
                     </Typography>
                 </Box>
 

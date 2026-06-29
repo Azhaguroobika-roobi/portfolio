@@ -22,42 +22,49 @@ const SectionLabel = ({ children }) => (
 function Skills() {
     const skillCategories = [
         {
-            category: "Web Design", icon: "🎨",
+            category: "Frontend Design", icon: "🎨",
             colorVar: 'var(--accent-primary)',
             bgVar: 'var(--accent-primary-08)',
             borderVar: 'var(--accent-primary-20)',
             skills: ["UI/UX Design", "Responsive Design", "Figma Basics"]
         },
         {
-            category: "Frontend", icon: "⚡",
+            category: "Frontend Development", icon: "⚛️",
             colorVar: 'var(--accent-secondary)',
             bgVar: 'var(--accent-secondary-08)',
             borderVar: 'var(--accent-secondary-20)',
-            skills: ["JavaScript", "React.js", "HTML5", "CSS3", "MUI"]
+            skills: ["React.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Material UI"]
         },
         {
-            category: "Tools", icon: "🛠️",
+            category: "Backend Development", icon: "⚙️",
             colorVar: 'var(--accent-purple)',
             bgVar: 'var(--accent-purple-08)',
             borderVar: 'var(--accent-purple-20)',
-            skills: ["Git / GitHub", "VS Code", "npm / yarn"]
+            skills: ["REST API Integration", "Authentication & Authorization", "JSON Data Handling"]
         },
         {
-            category: "Soft Skills", icon: "🤝",
+            category: "Development Tools", icon: "🛠️",
             colorVar: 'var(--accent-amber)',
             bgVar: 'var(--accent-amber-08)',
             borderVar: 'var(--accent-amber-20)',
-            skills: ["Communication", "Collaboration", "Commitment", "Adaptability"]
+            skills: ["Git & GitHub", "Visual Studio Code", "npm / yarn"]
+        },
+        {
+            category: "Professional Skills", icon: "🤝",
+            colorVar: 'var(--accent-primary)',
+            bgVar: 'var(--accent-primary-08)',
+            borderVar: 'var(--accent-primary-20)',
+            skills: ["Adaptability", "Team Collaboration", "Communication", "Quick Learner"]
         }
     ];
 
     return (
         <Box sx={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-section)' }}>
-            <Box sx={{ padding: { xs: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
+            <Box sx={{ padding: { xs: '40px 16px', sm: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
                 <SectionLabel>Skills</SectionLabel>
                 <Typography component="h2" sx={{
                     fontFamily: "'Inter', sans-serif",
-                    fontSize: { xs: '38px', md: '56px' }, fontWeight: 800,
+                    fontSize: { xs: '32px', sm: '38px', md: '56px' }, fontWeight: 800,
                     letterSpacing: '-1.5px', lineHeight: 1.1,
                     color: 'var(--text-primary)',
                     marginBottom: { xs: '40px', md: '56px' },
@@ -71,7 +78,7 @@ function Skills() {
 
                 <Box sx={{
                     display: 'grid',
-                    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', lg: 'repeat(4, 1fr)' },
+                    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: 'repeat(3, 1fr)', lg: 'repeat(5, 1fr)' },
                     gap: '20px',
                 }}>
                     {skillCategories.map((cat, index) => (

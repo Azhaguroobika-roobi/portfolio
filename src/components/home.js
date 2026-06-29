@@ -26,14 +26,14 @@ function Home() {
             {/* Background blobs */}
             <Box sx={{
                 position: 'absolute', top: '-15%', right: '-10%',
-                width: { xs: '300px', md: '600px' }, height: { xs: '300px', md: '600px' },
+                width: { xs: '250px', sm: '300px', md: '600px' }, height: { xs: '250px', sm: '300px', md: '600px' },
                 borderRadius: '50%',
                 background: `radial-gradient(circle, var(--blob-1) 0%, transparent 70%)`,
                 pointerEvents: 'none', zIndex: 0,
             }} />
             <Box sx={{
                 position: 'absolute', bottom: '10%', left: '-10%',
-                width: { xs: '200px', md: '400px' }, height: { xs: '200px', md: '400px' },
+                width: { xs: '150px', sm: '200px', md: '400px' }, height: { xs: '150px', sm: '200px', md: '400px' },
                 borderRadius: '50%',
                 background: `radial-gradient(circle, var(--blob-2) 0%, transparent 70%)`,
                 pointerEvents: 'none', zIndex: 0,
@@ -44,14 +44,14 @@ function Home() {
                 display: 'flex',
                 flexDirection: { xs: 'column-reverse', md: 'row' },
                 alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: { xs: '60px 24px 80px', md: '80px 60px 100px' },
+                justifyContent: { xs: 'center', md: 'space-between' },
+                padding: { xs: '60px 24px 80px', sm: '70px 40px 90px', md: '80px 60px 100px' },
                 maxWidth: '1300px',
                 margin: '0 auto',
                 position: 'relative',
                 zIndex: 2,
                 gap: { xs: '48px', md: '60px' },
-                minHeight: 'calc(100vh - 72px)',
+                minHeight: 'calc(100dvh - 72px)',
             }}>
                 {/* Left - Text Content */}
                 <Box sx={{ flex: 1, maxWidth: { xs: '100%', md: '580px' } }}>
@@ -96,7 +96,7 @@ function Home() {
                     <Box sx={{ marginBottom: '20px' }}>
                         <Typography component="h1" sx={{
                             fontFamily: "'Inter', sans-serif",
-                            fontSize: { xs: '44px', md: '68px', lg: '76px' },
+                            fontSize: { xs: '38px', sm: '48px', md: '68px', lg: '76px' },
                             fontWeight: 800,
                             lineHeight: 1.05,
                             letterSpacing: '-2px',
@@ -106,7 +106,7 @@ function Home() {
                         <br />
                         <Box component="span" sx={{
                             fontFamily: "'Inter', sans-serif",
-                            fontSize: { xs: '44px', md: '68px', lg: '76px' },
+                            fontSize: { xs: '38px', sm: '48px', md: '68px', lg: '76px' },
                             fontWeight: 800, lineHeight: 1.05, letterSpacing: '-2px',
                             background: 'var(--gradient-primary)',
                             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
