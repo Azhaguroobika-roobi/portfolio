@@ -40,7 +40,7 @@ function Skills() {
             colorVar: 'var(--accent-purple)',
             bgVar: 'var(--accent-purple-08)',
             borderVar: 'var(--accent-purple-20)',
-            skills: ["REST API Integration", "Authentication & Authorization", "JSON Data Handling"]
+            skills: ["Python","FastAPI", "REST API Integration", "Authentication & Authorization", "JSON Data Handling"]
         },
         {
             category: "Development Tools", icon: "🛠️",
