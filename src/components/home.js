@@ -45,7 +45,7 @@ function Home() {
                 flexDirection: { xs: 'column-reverse', md: 'row' },
                 alignItems: 'center',
                 justifyContent: { xs: 'center', md: 'space-between' },
-                padding: { xs: '60px 24px 80px', sm: '70px 40px 90px', md: '80px 60px 100px' },
+                padding: { xs: '10px 24px 80px', sm: '20px 40px 90px', md: '20px 60px 100px' },
                 maxWidth: '1300px',
                 margin: '0 auto',
                 position: 'relative',
