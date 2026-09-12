@@ -275,7 +275,9 @@
 /* ============================================================
    BASE STYLES
    ============================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -305,9 +307,11 @@ img {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--accent-primary);
   border-radius: 3px;
@@ -321,8 +325,10 @@ code {
 body::before {
   content: '';
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image:
     radial-gradient(circle at 20% 20%, var(--body-overlay-1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, var(--body-overlay-2) 0%, transparent 50%);

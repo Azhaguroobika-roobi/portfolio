@@ -85,7 +85,7 @@ function Home() {
                     {/* Greeting */}
                     <Typography sx={{
                         fontFamily: "'Inter', sans-serif",
-                        fontSize: { xs: '15px', md: '17px' },
+                        fontSize: { xs: '14px', md: '16px' },
                         color: 'var(--text-secondary)', fontWeight: 400,
                         marginBottom: '12px', letterSpacing: '0.2px',
                     }}>
@@ -96,35 +96,35 @@ function Home() {
                     <Box sx={{ marginBottom: '20px' }}>
                         <Typography component="h1" sx={{
                             fontFamily: "'Inter', sans-serif",
-                            fontSize: { xs: '38px', sm: '48px', md: '68px', lg: '76px' },
+                            fontSize: { xs: '32px', sm: '40px', md: '56px', lg: '64px' },
                             fontWeight: 800,
                             lineHeight: 1.05,
-                            letterSpacing: '-2px',
+                            letterSpacing: '-1.5px',
                             color: 'var(--text-primary)',
                         }}>
                             Software
-                        <br />
-                        <Box component="span" sx={{
-                            fontFamily: "'Inter', sans-serif",
-                            fontSize: { xs: '38px', sm: '48px', md: '68px', lg: '76px' },
-                            fontWeight: 800, lineHeight: 1.05, letterSpacing: '-2px',
-                            background: 'var(--gradient-primary)',
-                            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-                            display: 'block',
-                        }}>
-                            Engineer.
-                        </Box>
+                            <br />
+                            <Box component="span" sx={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: { xs: '32px', sm: '40px', md: '56px', lg: '64px' },
+                                fontWeight: 800, lineHeight: 1.05, letterSpacing: '-1.5px',
+                                background: 'var(--gradient-primary)',
+                                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                                display: 'block',
+                            }}>
+                                Engineer.
+                            </Box>
                         </Typography>
                     </Box>
 
                     {/* Description */}
                     <Typography sx={{
                         fontFamily: "'Inter', sans-serif",
-                        fontSize: { xs: '15px', md: '17px' },
+                        fontSize: { xs: '14px', md: '16px' },
                         color: 'var(--text-secondary)', lineHeight: 1.75,
                         marginBottom: '36px', maxWidth: '480px',
                     }}>
-                    I craft clean, responsive web experiences using React, TypeScript & Tailwind CSS. Passionate about building scalable interfaces that feel premium and performant.
+                        I craft clean, responsive web experiences using React, TypeScript & Tailwind CSS. Passionate about building scalable interfaces that feel premium and performant.
                     </Typography>
 
                     {/* Tech pills */}

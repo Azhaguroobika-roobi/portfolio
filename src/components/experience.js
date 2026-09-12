@@ -81,7 +81,7 @@ function Experience() {
 
     return (
         <Box sx={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-section)' }}>
-            <Box sx={{ padding: { xs: '40px 16px', sm: '60px 24px', md: '80px 60px' }, maxWidth: '1300px', margin: '0 auto' }}>
+            <Box sx={{ padding: { xs: '20px 16px 40px', sm: '30px 24px 60px', md: '40px 60px 80px' }, maxWidth: '1300px', margin: '0 auto' }}>
                 <SectionLabel>Experience</SectionLabel>
                 <Typography component="h2" sx={{
                     fontFamily: "'Inter', sans-serif",
